@@ -58,5 +58,10 @@ public class TinyCalculator {
 		return "";
 	}
 	
+	public String sin() {
+		result = Math.sin(operandOne);
+		return "";
+	}
+	
 
 }
