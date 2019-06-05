@@ -1,17 +1,29 @@
 package ua.selftaught;
 
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-@Named
-@RequestScoped
-public class TinyCalculator {
+@Named("tinyCalculator")
+@SessionScoped
+public class TinyCalculator implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2501705849074169929L;
+
+	private static final Logger logger = Logger.getLogger("TinyCalculator");
 	
 	private double operandOne;
 	private double operandTwo;
 	private double result;
 	
-	public TinyCalculator() {}
+	public TinyCalculator() {
+		logger.log(Level.INFO, "ctor TinyCalculator");
+	}
 
 	public double getOperandOne() {
 		return operandOne;
@@ -30,6 +42,7 @@ public class TinyCalculator {
 	}
 
 	public double getResult() {
+		logger.info("Result of an operation is : " + result);
 		return result;
 	}
 
