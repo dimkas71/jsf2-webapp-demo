@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
 @Named("tinyCalculator")
-@SessionScoped
+@ApplicationScoped
 public class TinyCalculator implements Serializable {
 	/**
 	 * 
